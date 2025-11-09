@@ -14,7 +14,7 @@ build-job:
   script:
     - docker build . -t raidzin/raidzin:latest
     - docker login -u $DOCKER_USER -p $DOCKER_TOKEN
-    - docker push -t raidzin/raidzin:latest
+    - docker push raidzin/raidzin:latest
 
 
 deploy-job:
