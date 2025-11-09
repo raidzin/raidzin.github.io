@@ -1,0 +1,19 @@
+stages:
+  - build
+  - deploy
+
+build-job:
+  stage: build
+  image: docker:latest
+  script:
+    - docker build . -t raidzin/raidzin:latest -t raidzin/raidzin:build-$CI_JOB_ID
+    - docker auth -u $DOCKER_USER -p $DOCKER_TOKEN
+    - docker push -t raidzin/raidzin:latest -t raidzin/raidzin:build-$CI_JOB_ID
+
+
+deploy-job:
+  stage: deploy
+  environment: production
+  script:
+    - echo "Deploying application..."
+    - echo "Application successfully deployed."
