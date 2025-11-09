@@ -13,7 +13,7 @@ build-job:
     DOCKER_TLS_CERTDIR: ""
   script:
     - docker build . -t raidzin/raidzin:latest
-    - docker auth -u $DOCKER_USER -p $DOCKER_TOKEN
+    - docker login -u $DOCKER_USER -p $DOCKER_TOKEN
     - docker push -t raidzin/raidzin:latest
 
 
