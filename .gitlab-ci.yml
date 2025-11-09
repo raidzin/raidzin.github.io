@@ -6,7 +6,11 @@ build-job:
   stage: build
   image: docker:latest
   services:
-    - "docker:dind"
+    - name: "docker:dind"
+      alias: docker
+  variables:
+    DOCKER_HOST: "tcp://docker:2375"
+    DOCKER_TLS_CERTDIR: ""
   script:
     - docker build . -t raidzin/raidzin:latest -t raidzin/raidzin:build-$CI_JOB_ID
     - docker auth -u $DOCKER_USER -p $DOCKER_TOKEN
