@@ -33,7 +33,7 @@ deploy:
   before_script:
     - apt-get update && apt-get install openssh-client -y
     - eval $(ssh-agent -s)
-    - cat "$RAIDZIN_KEY" | tr -d '\r' | ssh-add -
+    - cat "$RAIDZIN_KEY"
     - chmod 600 ~/.ssh/id_rsa
     - ssh-keyscan -H $RAIDZIN_HOST >> ~/.ssh/known_hosts
   script: -|
