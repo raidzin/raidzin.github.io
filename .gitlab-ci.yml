@@ -34,7 +34,7 @@ deploy:
     - apt-get update && apt-get install openssh-client -y
     - mkdir ~/.ssh
     - touch ~/.ssh/id_rsa
-    - echo "$RAIDZIN_KEY" >> ~/.ssh/id_rsa
+    - echo "$RAIDZIN_KEY" | tr -d '\r' | sed 's/\\n/\n/g' >> ~/.ssh/id_rsa
     - chmod 600 ~/.ssh/id_rsa
     - ssh-keyscan -H $RAIDZIN_HOST >> ~/.ssh/known_hosts
   script: -|
