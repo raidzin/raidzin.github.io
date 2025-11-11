@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 
 interface Props {
   name: string;
-  title: string;
+  akas: string[];
   description: string;
   avatar: any;
   location?: string;
@@ -20,7 +20,7 @@ interface Props {
   };
 }
 
-const { name, title, description, avatar, location, socialLinks } = Astro.props;
+const { name, akas, description, avatar, location, socialLinks } = Astro.props;
 ---
 
 <section class="hero min-h-screen">
@@ -34,9 +34,18 @@ const { name, title, description, avatar, location, socialLinks } = Astro.props;
     </div>
     <div class="max-w-2xl">
       <h1 class="text-5xl font-bold mb-4">
-        Hi, I'm {name}
+        Привет, я {name}
       </h1>
-      <p class="text-xl text-base-content/80 mb-2">{title}</p>
+      <p class="text-xl text-base-content/80 mb-2">
+        {
+          akas.map((aka) => (
+            <span>
+              <span class="text-base/tight">aka</span>
+              <span class="text-secondary">{aka}</span>
+            </span>
+          ))
+        }
+      </p>
       {location && <p class="text-base-content/60 mb-4">{location}</p>}
       <p class="text-lg leading-relaxed mb-6">
         {description}

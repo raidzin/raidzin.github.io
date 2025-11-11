@@ -7,6 +7,7 @@ import Projects from "../components/Projects.astro";
 import Blog from "../components/Blog.astro";
 import Hackathons from "../components/Hackathons.astro";
 import Contact from "../components/Contact.astro";
+import TechStack from "../components/TechStack.astro";
 import { Briefcase, GraduationCap } from "@lucide/astro";
 import { getEntry, render } from "astro:content";
 import { siteConfig } from "../config";
@@ -25,9 +26,9 @@ const { Content: AboutContent } = await render(aboutEntry);
   <main>
     <!-- Hero Section (Always visible) -->
     <Hero
-      name={siteConfig.name}
-      title={siteConfig.title}
-      description={siteConfig.description}
+      name="Лёха"
+      akas={["Алексей Гончарук", "Raidzin"]}
+      description="Фуллстек разработчик, немного опенсорсер и начинающий спикер"
       avatar={avatar}
       location={siteConfig.location}
       socialLinks={siteConfig.socialLinks}
@@ -44,6 +45,8 @@ const { Content: AboutContent } = await render(aboutEntry);
       )
     }
 
+    <TechStack sectionTitle="Мой стек" />
+
     <!-- Projects Section -->
     {siteConfig.sections.projects && <Projects />}
 
@@ -57,6 +60,7 @@ const { Content: AboutContent } = await render(aboutEntry);
           collection="work"
           variant="timeline"
           color="primary"
+          backgroundColor="base-300"
           icon={Briefcase}
           sectionTitle="Опыт работы"
         />

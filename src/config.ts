@@ -96,7 +96,7 @@ export interface SiteConfig {
  * Update these values to customize your portfolio
  */
 export const siteConfig: SiteConfig = {
-  name: "Raidzin ⚡",
+  name: "Raidzin",
   title: "Astro Portfolio Template built with 🌼 DaisyUI",
   description:
     "A modern, responsive, and customizable portfolio template built with Astro and DaisyUI. Perfect for developers, designers, and creatives to showcase their work and skills.",
@@ -105,7 +105,7 @@ export const siteConfig: SiteConfig = {
   email: "hello@example.com",
   socialLinks: {
     github: "https://github.com/raidzin",
-    telegram: "https://t.me/FlyingRaidzin"
+    telegram: "https://t.me/FlyingRaidzin",
     // linkedin: "https://linkedin.com/in/lauroguedes",
     // twitter: "https://twitter.com/leowg",
     // bluesky: "https://bsky.app/profile/lauroguedes.bsky.social",
@@ -115,7 +115,7 @@ export const siteConfig: SiteConfig = {
   },
   enableThemeSelector: true,
   extraLinks: {
-    enable: true,
+    enable: false,
     links: [
       {
         link: "/blog/guides/bloomfolio-complete-guide",
