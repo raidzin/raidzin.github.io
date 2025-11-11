@@ -2,7 +2,7 @@ stages:
   - build
   - deploy
 
-build-job:
+build:
   stage: build
   image: docker:latest
   services:
@@ -16,10 +16,15 @@ build-job:
     - docker login -u $DOCKER_USER -p $DOCKER_TOKEN
     - docker push raidzin/raidzin:latest
 
-
-deploy-job:
+deploy:
   stage: deploy
-  environment: production
-  script:
-    - echo "Deploying application..."
-    - echo "Application successfully deployed."
+  before_script:
+    - echo "$RAIDZIN_KEY" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - ssh-keyscan -H $RAIDZIN_HOST >> ~/.ssh/known_hosts
+  script: -|
+    ssh $RAIDZIN_USER@$RAIDZIN_HOST "
+    sudo docker compose -f /root/raidzin/docker-compose.yaml pull
+    & sudo docker compose -f /root/raidzin/docker-compose.yaml dow
+    & sudo docker compose -f /root/raidzin/docker-compose.yaml up -d
+    "
