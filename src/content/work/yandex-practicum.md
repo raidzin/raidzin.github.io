@@ -1,7 +1,7 @@
 ---
 title: "Яндекс Практикум"
 subtitle: "Тимлид в проектном месяце"
-logo: "/yandex-practicum-logo.jpg"
+logo: "/images/yandex-practicum-logo.jpg"
 startDate: "2023-06-01"
 endDate: "2023-10-01"
 link: "https://practicum.yandex.ru/"
