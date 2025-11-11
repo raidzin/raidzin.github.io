@@ -32,9 +32,7 @@ deploy:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   before_script:
     - apt-get update && apt-get install openssh-client -y
-    - mkdir ~/.ssh
-    - touch ~/.ssh/id_rsa
-    - echo "$RAIDZIN_KEY" | tr -d '\r' | sed 's/\\n/\n/g' >> ~/.ssh/id_rsa
+    - echo "$RAIDZIN_KEY" | tr -d '\r' | ssh-add -
     - chmod 600 ~/.ssh/id_rsa
     - ssh-keyscan -H $RAIDZIN_HOST >> ~/.ssh/known_hosts
   script: -|
