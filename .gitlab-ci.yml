@@ -34,9 +34,9 @@ deploy:
     - apt-get update && apt-get install openssh-client -y
     - eval $(ssh-agent -s)
     - cat "$RAIDZIN_KEY" | ssh-add -
-  script: -|
-    ssh $RAIDZIN_USER@$RAIDZIN_HOST "
-    sudo docker compose -f /root/raidzin/docker-compose.yaml pull
-    & sudo docker compose -f /root/raidzin/docker-compose.yaml down
-    & sudo docker compose -f /root/raidzin/docker-compose.yaml up -d
-    "
+  script:
+    - ssh $RAIDZIN_USER@$RAIDZIN_HOST "
+      docker compose -f /root/raidzin/docker-compose.yaml pull
+      && docker compose -f /root/raidzin/docker-compose.yaml down
+      && docker compose -f /root/raidzin/docker-compose.yaml up -d
+      "
