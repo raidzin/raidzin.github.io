@@ -5,16 +5,6 @@ stages:
 build:
   stage: build
   image: docker:latest
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-      changes:
-      - src
-      - public
-      - pakcage.json
-      - bun.lock
-      - astro.config.mjs
-      - tsconfig.json
-      - Dockerfile
   services:
     - name: "docker:dind"
       alias: docker
@@ -26,17 +16,17 @@ build:
     - docker login -u $DOCKER_USER -p $DOCKER_TOKEN
     - docker push raidzin/raidzin:latest
 
-deploy:
-  stage: deploy
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-  before_script:
-    - apt-get update && apt-get install openssh-client -y
-    - eval $(ssh-agent -s)
-    - cat "$RAIDZIN_KEY" | ssh-add -
-  script:
-    - ssh $RAIDZIN_USER@$RAIDZIN_HOST "
-      docker compose -f /root/raidzin/docker-compose.yaml pull
-      && docker compose -f /root/raidzin/docker-compose.yaml down
-      && docker compose -f /root/raidzin/docker-compose.yaml up -d
-      "
+# deploy:
+#   stage: deploy
+#   rules:
+#     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+#   before_script:
+#     - apt-get update && apt-get install openssh-client -y
+#     - eval $(ssh-agent -s)
+#     - cat "$RAIDZIN_KEY" | ssh-add -
+#   script:
+#     - ssh $RAIDZIN_USER@$RAIDZIN_HOST "
+#       docker compose -f /root/raidzin/docker-compose.yaml pull
+#       && docker compose -f /root/raidzin/docker-compose.yaml down
+#       && docker compose -f /root/raidzin/docker-compose.yaml up -d
+#       "
