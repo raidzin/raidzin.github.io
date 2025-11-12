@@ -97,12 +97,12 @@ export interface SiteConfig {
  */
 export const siteConfig: SiteConfig = {
   name: "Raidzin",
-  title: "Astro Portfolio Template built with 🌼 DaisyUI",
+  title: "Алексей Гончарук aka Raidzin",
   description:
-    "A modern, responsive, and customizable portfolio template built with Astro and DaisyUI. Perfect for developers, designers, and creatives to showcase their work and skills.",
+    "Привет, я Алексей Гончарук, фуллстек разработчик, немного опенсорсер и спикер. Тут можно узнать про мои доклады и проекты",
   avatar: "avatar.png",
   location: "",
-  email: "hello@example.com",
+  email: "agonch2001@gmail.com",
   socialLinks: {
     github: "https://github.com/raidzin",
     telegram: "https://t.me/FlyingRaidzin",

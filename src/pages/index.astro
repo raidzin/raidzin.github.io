@@ -19,15 +19,12 @@ const aboutEntry = await getEntry("about", "about");
 const { Content: AboutContent } = await render(aboutEntry);
 ---
 
-<Layout
-  title={`${siteConfig.name} - Portfolio`}
-  description={siteConfig.description}
->
+<Layout title="Raidzin" description={siteConfig.description}>
   <main>
     <!-- Hero Section (Always visible) -->
     <Hero
-      name="Лёха"
-      akas={["Алексей Гончарук", "Raidzin"]}
+      name="Алексей Гончарук"
+      akas={["Raidzin"]}
       description="Фуллстек разработчик, немного опенсорсер и начинающий спикер"
       avatar={avatar}
       location={siteConfig.location}
@@ -45,7 +42,7 @@ const { Content: AboutContent } = await render(aboutEntry);
       )
     }
 
-    <TechStack sectionTitle="Мой стек" />
+    <TechStack />
 
     <!-- Projects Section -->
     {siteConfig.sections.projects && <Projects />}
