@@ -73,7 +73,7 @@ const blog = defineCollection({
 
 // Tech-Stack collection
 const techStack = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/techStack" }),
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/techStack" }),
   schema: z.object({
     title: z.string(),
     experience: z.string(),

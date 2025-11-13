@@ -1,4 +1,5 @@
 ---
+import { BriefcaseBusiness } from "@lucide/astro";
 import { getCollection, render } from "astro:content";
 
 interface Props {
@@ -25,6 +26,9 @@ const entriesWithContent = await Promise.all(
   <div class="mx-auto">
     <div class="text-center mb-12">
       <h2 class="text-4xl font-bold">Мой стек</h2>
+      <p class="text-base-content/70 mt-2">
+        Технологии и языки с которыми я работал больше всего
+      </p>
     </div>
   </div>
   <div class="mx-auto max-w-2xl flex flex-col gap-2">
@@ -40,13 +44,13 @@ const entriesWithContent = await Promise.all(
             )}
             <div>
               <h3 class="font-bold text-3xl">{entry.data.title}</h3>
-              <p class={`text-${color} font-semibold text-lg`}>
+              <p class="text-primary font-semibold text-lg">
                 {entry.data.experience}
               </p>
             </div>
           </div>
           <div class="collapse-content text-sm">
-            <div class="prose prose-sm max-w-none text-base-content/80">
+            <div class="max-w-none text-base-content/80 prose prose-a:no-underline prose-a:badge prose-a:badge-outline prose-a:hover:badge-soft prose-a:badge-sm prose-a:font-semibold prose-a:duration-300 prose-a:text-secondary prose-a:hover:text-primary ">
               <Content />
             </div>
           </div>

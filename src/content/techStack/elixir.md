@@ -5,4 +5,5 @@ experience: Пол года
 order: 3
 ---
 
-Для всяких нагруженных штук, и софт реалтайм систем
+Изучаю для себя, меня он привлекает функциональной парадигмой и акторной моделью.
+Делаю пет проекты на [Phoenix](https://www.phoenixframework.org/) и [Ecto](https://hexdocs.pm/ecto/getting-started.html)

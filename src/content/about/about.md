@@ -3,4 +3,7 @@ title: "О себе"
 photo: "../../assets/about.jpg"
 ---
 
-I'm a full-stack developer with a passion for creating beautiful, functional, and user-friendly web applications. With experience in **modern frameworks and technologies**, I love turning ideas into reality through code. When I'm not coding, you can find me **exploring new technologies**, contributing to open source, or enjoying a good cup of coffee.
+Я фуллстек разработчик с уклоном в бекэнд. Пишу **душный код** и люблю душные инструменты:
+линтеры, форматеры, тайпчекеры да побольше. Обычно пишу на **современных фреймворках и технологиях**,
+но и легаси с хранимками на 5 экранов разбирать приходилось. Контрибучу в опенсорс по возможности.
+Хожу на конференции и митапы, иногда даже [с докладами](https://youtu.be/lN3Pz_hUCio).

@@ -1,8 +1,10 @@
 ---
 title: Python
 logo: /images/python.png
-experience: 3 года
+experience: Три года
 order: 1
 ---
 
-Мой основной язык, пишу на нём больше всего, использую практически для всех задач
+На текущий момент мой **основной** язык, так как он подходит почти для любых задач.
+Много опыта в написании сервисов на [FastAPI](https://fastapi.tiangolo.com/) и [SQLAlchemy](https://www.sqlalchemy.org/),
+хотя последнее время больше отдаю предпочтение [Litestar](https://litestar.dev/)

@@ -26,9 +26,9 @@ const { title, photo, Content } = Astro.props;
       </figure>
       <div class="card-body">
         <h2 class="card-title text-2xl">{title}</h2>
-        <p class="text-lg">
+        <div class="prose">
           <Content />
-        </p>
+        </div>
         <!-- <div class="card-actions justify-end">
           <div class="tooltip" data-tip="More about me">
             <a

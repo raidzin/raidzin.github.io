@@ -1,0 +1,14 @@
+---
+interface Props {
+  url: string;
+}
+
+const { url } = Astro.props;
+---
+
+<span
+  class="badge badge-sm font-semibold badge-secondary hover:badge-primary not-hover:badge-outline duration-300"
+>
+  <slot />
+</span>
+<!-- <a href="" class="clear-both"></a> -->
