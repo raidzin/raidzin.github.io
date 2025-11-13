@@ -10,9 +10,11 @@ const { color = "primary", backgroundColor = "base-200" } = Astro.props;
 
 const entries = await getCollection("techStack");
 
+const sortedEntries = entries.sort((a, b) => a.data.order - b.data.order);
+
 // Render markdown content for each entry
 const entriesWithContent = await Promise.all(
-  entries.map(async (entry) => {
+  sortedEntries.map(async (entry) => {
     const { Content } = await render(entry);
     return { entry, Content };
   })
@@ -30,7 +32,7 @@ const entriesWithContent = await Promise.all(
       entriesWithContent.map(({ entry, Content }, index) => (
         <div class="collapse collapse-arrow bg-base-100 rounded-box shadow-lg">
           <input type="checkbox" name="techStack" />
-          <div class="collapse-title flex flex-row items-center gap-2">
+          <div class="collapse-title flex flex-row items-center gap-4">
             {entry.data.logo && (
               <div class="w-16 mask mask-square">
                 <img src={entry.data.logo} alt={entry.data.title} />

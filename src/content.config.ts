@@ -78,6 +78,7 @@ const techStack = defineCollection({
     title: z.string(),
     experience: z.string(),
     logo: z.string().optional(),
+    order: z.number().default(0),
   }),
 });
 
