@@ -1,5 +1,23 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: silk --default, abyss --prefersdark;
+  themes:
+    silk --default,
+    abyss --prefersdark;
 }
+@plugin "daisyui/theme" {
+  name: "abyss";
+  --radius-selector: 2rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+}
+
 @plugin "@tailwindcss/typography";
+
+html,
+section {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}

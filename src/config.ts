@@ -113,7 +113,7 @@ export const siteConfig: SiteConfig = {
     // youTube: "https://youtube.com/leowgweb",
     // codetips: "https://codetips.cloud/u/lauroguedes",
   },
-  enableThemeSelector: true,
+  enableThemeSelector: false,
   extraLinks: {
     enable: false,
     links: [

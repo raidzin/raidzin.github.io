@@ -1,7 +1,7 @@
 ---
 title: Vue
 logo: /images/vue.png
-experience: Полтора года
+experience: Два года
 order: 2
 ---
 

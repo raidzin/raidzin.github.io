@@ -2,7 +2,7 @@
 title: "Газ IT"
 subtitle: "Инженер-программист"
 logo: "/images/gaz-it-logo.jpg"
-startDate: "2022-09-01"
+startDate: "2022-04-01"
 link: "https://citrb.ru"
 ---
 
