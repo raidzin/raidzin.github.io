@@ -1,0 +1,61 @@
+---
+import { BriefcaseBusiness } from "@lucide/astro";
+import { getCollection, render } from "astro:content";
+
+interface Props {
+  color?: string;
+  backgroundColor?: string;
+}
+
+const { color = "primary", backgroundColor = "base-200" } = Astro.props;
+
+const entries = await getCollection("techStack");
+
+const sortedEntries = entries.sort((a, b) => a.data.order - b.data.order);
+
+// Render markdown content for each entry
+const entriesWithContent = await Promise.all(
+  sortedEntries.map(async (entry) => {
+    const { Content } = await render(entry);
+    return { entry, Content };
+  }),
+);
+---
+
+<section id="tech-stack" class={`py-20 px-4 bg-${backgroundColor}`}>
+  <div class="mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold">Записи докладов</h2>
+      <!-- <p class="text-base-content/70 mt-2">
+        Технологии и языки с которыми я работал больше всего
+      </p> -->
+    </div>
+  </div>
+  <div class="mx-auto max-w-2xl flex flex-row gap-2">
+    <div class="card bg-base-100 shadow-sm w-full">
+      <figure class="w-full aspect-video">
+        <iframe
+          src="https://www.youtube.com/embed/lN3Pz_hUCio?si=orHUj_Sldym08MQM"
+          title="PythoNN 2025-04-04"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          loading="lazy"
+          class="w-full h-full"></iframe>
+      </figure>
+      <div class="card-body gap-1">
+        <div class="flex flex-row justify-between items-end">
+          <h2 class="card-title font-bold">PythoNN</h2>
+          <span class="text-secondary">04.04.2025</span>
+        </div>
+
+        <p>
+          <strong>Современный web с современными темплейтами</strong>. Говорю
+          про актуальные веб фреймворки и рассказываю чем мне нравится
+          <strong>Litestar</strong> и как с помощью него и <strong>HTMX</strong> сделать
+          динамичный web на шаблонах
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

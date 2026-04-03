@@ -6,8 +6,12 @@ import { Lightbulb } from "@lucide/astro";
 <label class="swap swap-flip">
   <input type="checkbox" class="theme-controller" value="abyss" />
 
-  <Lightbulb class="swap-off fill-current w-6 h-6 rotate-180" />
-  <Lightbulb class="swap-on w-6 h-6 rotate-180" />
+  <div class="swap-off tooltip tooltip-left" data-tip="Выкрутить">
+    <Lightbulb class="fill-current w-6 h-6 rotate-180" />
+  </div>
+  <div class="swap-on tooltip tooltip-left" data-tip="Вкрутить">
+    <Lightbulb class="w-6 h-6 rotate-180" />
+  </div>
 </label>
 
 <script is:inline>

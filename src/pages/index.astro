@@ -8,6 +8,7 @@ import Blog from "../components/Blog.astro";
 import Hackathons from "../components/Hackathons.astro";
 import Contact from "../components/Contact.astro";
 import TechStack from "../components/TechStack.astro";
+import TalkRecords from "../components/TalkRecords.astro";
 import { Briefcase, GraduationCap } from "@lucide/astro";
 import { getEntry, render } from "astro:content";
 import { siteConfig } from "../config";
@@ -64,6 +65,8 @@ const { Content: AboutContent } = await render(aboutEntry);
       )
     }
 
+    <TalkRecords />
+
     <!-- Education Section -->
     {
       siteConfig.sections.education && (
@@ -82,6 +85,6 @@ const { Content: AboutContent } = await render(aboutEntry);
     {siteConfig.sections.hackathons && <Hackathons />}
 
     <!-- Contact Section -->
-    {siteConfig.sections.contact && <Contact />}
+    {siteConfig.sections.contact && <Contact class="base-200" />}
   </main>
 </Layout>
