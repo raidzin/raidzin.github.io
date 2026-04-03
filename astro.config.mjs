@@ -7,6 +7,7 @@ import mdx from '@astrojs/mdx';
 // https://astro.build/config
 export default defineConfig({
   prefetch: true,
+  site: "https://raidzin.github.io",
   integrations: [mdx()],
   vite: {
     plugins: [tailwindcss()]
